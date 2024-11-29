@@ -1,8 +1,6 @@
-import java.util.Scanner;
-
 public class RewardValue {
-    private double cashValue;
-    private double milesValue;
+    private final double cashValue;  // Mark as final
+    private final double milesValue; // Mark as final
 
     // Constructor to accept cash value and convert it to miles
     public RewardValue(double cashValue) {
@@ -15,6 +13,8 @@ public class RewardValue {
         this.milesValue = milesValue;
         if (isMiles) {
             this.cashValue = milesValue * 0.0035;  // Convert miles to cash
+        } else {
+            this.cashValue = 0.0;  // You could set a default if needed
         }
     }
 
@@ -39,4 +39,3 @@ public class RewardValue {
         System.out.println("5000 miles is worth $" + rewardValueFromMiles.getCashValue());
     }
 }
-
